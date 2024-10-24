@@ -78,6 +78,7 @@
 
 const G4int nLayers = 4; //number of layers in detector. Up here since it defines an array
 
+
 //const G4String mqOpticalFilePath = "/home/users/ryan/milliQanDemoSim/OpticalData/";
 //const G4String mqOpticalFilePath = (std::string)std::getenv("PROJECTDIR")+"/OpticalData/";
 const G4String mqOpticalFilePath = "../OpticalData/";
@@ -165,7 +166,7 @@ G4VPhysicalVolume* mqDetectorConstruction::SetupGeometry() {
 	G4double measurementPos=243*mm;
 	G4double wrapRefl = 0.97;//0.97;
 	G4double scintX = 50/2*mm;
-	G4double scintY = 50/2*mm;
+	G4double scintY = 50/2*mm; 
 	G4double scintXY = 50/2*mm;
 	G4double scintZ  = 800/2*mm;//(each of these dimensions represents the half-width; e.g. this is 600mm long)
 
@@ -193,7 +194,7 @@ G4VPhysicalVolume* mqDetectorConstruction::SetupGeometry() {
 	G4double barSpacingXY = 60*mm;
 	//G4double layerSpacing = 1000*mm; 
 	//in visualization this gets swapped, so this is actually 3x2 rather than 2x3
-        G4int nBarXCount = 3; //number of bars in grid, so this is NxN
+        G4int nBarXCount = 2; //number of bars in grid, so this is NxN
         G4int nBarYCount = 2; //number of bars in grid, so this is NxN
 	this->SetNBarPerLayer(nBarXCount*nBarYCount);
 	this->SetNLayer(nLayers);
@@ -204,9 +205,9 @@ G4VPhysicalVolume* mqDetectorConstruction::SetupGeometry() {
 	 G4double height_cath       = 2.0 * mm; //2mm
 	 G4double muMetalThickness = 0.5*mm;
 
-	 G4double ScintSlabX = 60/2*cm;
-	 G4double ScintSlabY = 40/2*cm;
-	 G4double ScintSlabZ = 5/2*cm;
+	 G4double ScintSlabX = 31/2*cm;
+	 G4double ScintSlabY = 20.5/2*cm;
+	 G4double ScintSlabZ = 2.5/2*cm;
 	 G4double ScintSlabWrapX = ScintSlabX+airGapThickness+wrapThickness;
 	 G4double ScintSlabWrapY = ScintSlabY+airGapThickness+wrapThickness;
 	 G4double ScintSlabWrapZ = ScintSlabZ+airGapThickness+wrapThickness;
